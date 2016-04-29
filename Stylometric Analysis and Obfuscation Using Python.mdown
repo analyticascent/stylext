@@ -1,0 +1,101 @@
+# Stylometric Analysis and Obfuscation Using Python
+
+#### Using Machine Learning to Attribute or Conceal 'Tweet' Authorship
+
+___
+
+**Note to readers:** *This draft will be updated on a release early, release often basis over the next couple days. I plan on adding sample code code blocks specific to the pre-processing phase before training a logistic regression model and after downloading data in CSV format via Twitter's API. Those will be added tonight*
+
+*For now this should still give readers an idea of the broader approach being taken with code to follow thereafter.* 
+
+**- 4/28/16**
+
+___
+
+**Stylometry** is the process of distinguishing one author from another based on the content of what they have written. Specifically, it attempts to identify *writer invariants* - that is, characteristics of author passages that are both *unique* to the same author and *persist* throughout most writing samples. This capstone project will apply such techniques to the analysis of raw Twitter data to explore their feasability given Twitter's 140-character limit per post.
+
+### Problem and Hypothesis:
+
+In the absence of usernames, what *features* can we best identify tweet authorship with that are statistically unique as well as consistent throughout an author's writing? To my knowledge, such features can largely be classified under the following categories:
+
+* **Numeric:** Average sentence length, syllables per word or tweet, characters per tweet, etc.
+* **Synonyms:** Word choice, contraction use, abbreviations, internet slang, etc.
+* **Punctuation:** Choice between comma, semicolon, or hyphen use, among other things. 
+
+My **hypothesis** is that despite the fact that Twitter comments ('tweets') are limited to 140 characters, there are features that are unique to tweets which would allow them to be just as attributable in a *non-adversarial setting* (no conscious attempt to obfuscate 'tweet' style by authors). These include, but are not limited to:
+
+* The use of **hashtags** in twitter comments.
+* How often a user **replies** to others.
+* The frequency at which a user **links** to other sites.
+
+### Data Acquisition and Description:
+
+**Summary:** *I have chosen to use a minimum of 500 tweets from all US Senators as the corpus for testing.*
+
+According to research done by Drexel University Researchers who applied stylometry techniques to more open-ended text passages (namely internet black market communications), the accuracy of a classifier [does not improve much after five thousand words from a given author](https://youtu.be/xL9aam3ZUlk?t=12m40s) have been used to train the model.
+
+Combining that information with existing analysis of [typical tweet character lengths](https://smk.co/article/the-average-tweet-length-is-28-characters-long-and-other-interesting-facts), I suspect that **five-hundred tweets** from all US Senators should have sufficient unstructured data to potentially build an accurate predictor for unattributed tweets from those same individuals. This is in part because public officials are likely to tweet at greater length than average users who use the service for leisure alone.
+
+As of this document draft, I am current in the process of installing a [Ruby API utility](https://github.com/sferik/t) that allows a user to export a given Twitter feed to CSV format, which can easily be read into Jupyter. Once I have the dependencies sorted out, a CSV file for any given Twitter fead should be easily accessible in raw CSV form. Previously I utilized Twitter's API using Twython as follows, but this lacked the functionality I was looking for:
+
+```python
+def __main__():
+	from twython import Twython
+	print 'test'
+
+	twitter = Twython("") # I removed my access tokens from here for obvious reasons
+
+	from pprint import pprint
+	#pprint(twitter)
+	search_result = twitter.search(q = 'stylometry')
+	#pprint(search_result)
+	for status in search_result ['statuses']:
+		user = status['user']['screen_name'].encode('utf-8')
+		text = status['text'].encode('utf-8')
+		print user, ":", text
+		print
+__main__()
+```
+
+Instead, I tentatively plan on doing the following:
+
+* Install the previously mentioned Twitter API utility that relies on Ruby
+* Run the following command for each feed: **t timeline [username] -n 500 --csv > timeline.csv**
+* Aggregate all one-hundred feeds into a single CSV file to read into Jupyter.
+* Begin some pre-processing steps that will allow for logistic regression modeling later.
+
+### Pre-processing
+
+* Will be adding sample code blocks soon.
+
+### Early Findings
+ 
+*To be added this weekend as soon as I successfully utilize Twitter's API as needed*
+
+### Which features?
+
+This is a tentative sample of features which were selected due to the possible likelihood that they are statistically unique to a given twitter feed as well as consistent throughout sample tweets:
+
+* Average sentence length in words and characters
+* Syllable count per word, sentence, and tweet
+* Word choice frequency and contraction use
+* Distribution of "stop" words (that have no special meaning)
+* Average hashtags per tweet/which hashtags
+* Frequency of replies to other users/which users
+* Frequency of linking to other sites/which domains
+* Absence or presence of text placed before or after links
+* Possibile topic modeling, though that wouldn't be "true" stylometry.
+
+
+### Challenges and Successes
+
+At the time of this draft, the primary challenges have been preliminary things such as installing the the Ruby dependencies for the command interface I hope to interact with Twitter's API with.
+
+Because solving this would be crossing a major hurdle, I have chosen to take a release early, release often approach to this document.
+
+### Possible Extensions or Business Applications
+
+*To be added tonight*
+
+
+
