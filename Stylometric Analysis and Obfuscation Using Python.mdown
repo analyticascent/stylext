@@ -4,39 +4,54 @@
 
 ___
 
-**Note to readers:** *This draft will be updated on a release early, release often basis over the next couple days. I plan on adding sample code code blocks specific to the pre-processing phase before training a logistic regression model and after downloading data in CSV format via Twitter's API. Those will be added tonight*
+**Stylometry** is the process of distinguishing one author from another through unique writing styles. Specifically, it attempts to identify *writer invariants* - that is, characteristics of author passages that are both *unique* to the same author and *persist* throughout most author passages. This capstone project will apply such techniques to the analysis of raw Twitter data to explore their feasability given Twitter's 140-character limit per post.
 
-*For now this should still give readers an idea of the broader approach being taken with code to follow thereafter.* 
+My aim is to limit myself to techniques that anyone who has worked with the [the iris classification problem](https://en.wikipedia.org/wiki/Iris_flower_data_set) can understand. This is because some of the prospective users of my final result want to know for *themselves* how stylometry works in practice, and these people found a well-known set of tools in this area ([Jstylo and Anonymouth](https://psal.cs.drexel.edu/index.php/JStylo-Anonymouth)) to not be user-friendly for laypersons.
 
-**- 4/28/16**
+Adhering to their value of "don't trust what you can't understand," the executible result will show how two twitter feeds can be "fingerprinted" in a manner that allows attribution of unnamed tweets from either user to take place. Over time I plan to continue expanding the proof of concept to work with a wider variety of feeds as well as additional machine learning techniques.
 
-___
-
-**Stylometry** is the process of distinguishing one author from another based on the content of what they have written. Specifically, it attempts to identify *writer invariants* - that is, characteristics of author passages that are both *unique* to the same author and *persist* throughout most writing samples. This capstone project will apply such techniques to the analysis of raw Twitter data to explore their feasability given Twitter's 140-character limit per post.
+As successful methods for "fingerprinting" feeds are found, adversarial techniques for obfuscating writing styles will be explored as well. My aim is to develop a relatively easy process for protecting the pseudonymity of individuals on social media, as well as demonstrate that character limits on posts do not prevent unique posting styles from surfacing.
 
 ### Problem and Hypothesis:
 
-In the absence of usernames, what *features* can we best identify tweet authorship with that are statistically unique as well as consistent throughout an author's writing? To my knowledge, such features can largely be classified under the following categories:
+In the absence of usernames, what *features* can we best identify tweet authorship with that are statistically *unique* as well as *consistent* throughout an author's writing? It appears such features can largely be classified under the following categories:
 
 * **Numeric:** Average sentence length, syllables per word or tweet, characters per tweet, etc.
 * **Synonyms:** Word choice, contraction use, abbreviations, internet slang, etc.
 * **Punctuation:** Choice between comma, semicolon, or hyphen use, among other things. 
 
-My **hypothesis** is that despite the fact that Twitter comments ('tweets') are limited to 140 characters, there are features that are unique to tweets which would allow them to be just as attributable in a *non-adversarial setting* (no conscious attempt to obfuscate 'tweet' style by authors). These include, but are not limited to:
+My **hypothesis** is that despite the fact that Twitter comments ('tweets') are limited to 140 characters, there are features that are *unique to tweets* which would allow them to be just as attributable in a *non-adversarial setting* (no conscious attempt to obfuscate 'tweet' style by authors). These include, but are not limited to:
 
 * The use of **hashtags** in twitter comments.
 * How often a user **replies** to others.
 * The frequency at which a user **links** to other sites.
+* A user's **choice** and **frequency** of emoji usage.
+
+Placing a very short character limit on any social media posts may force users to develop *unique* ways of making text more succinct (such as abbreviations or chat slang). With *pure* stylometry, an effective scheme for authorship attribution is able to achieve it's goal without inferring from the subject matter in the passage itself. Posts with 140 characters or less should still develop writer invariants that can be detected through pre-processing methods discussed later in this paper. Though enhanced techniques for identifying authors *might* be possible using various forms of topic modeling, those are (for now) beyond the scope of this project. I will limit my focus to features that are independent of whatever topic is being discussed.
+
+### An Extension of the Iris Classification Problem
+
+This project can be thought of as a more sophisticated version of what many consider to be the "Hello world" of machine learning: [The Iris classification problem](https://en.wikipedia.org/wiki/Iris_flower_data_set). Rather than classifying *four* existing measurement features (length/width measurements of *sepals and petals) under *three* categorical outcomes, this project will entail the use of *over a dozen features* to attribute tweets to a *hundred categorical outcomes.* From start to finish, it will boil down to the following:
+
+* Utilizing Twitter's API to acquire tweets in CSV form
+* Write code blocks for each of the tweet features being measured
+* Pre-process tweets so linear discriminant analysis can be applied
+* Apply logistic regression to attribute authorship of unlabeled tweets
+* If possible, develop methods for subverting those classification schemes
+
+The outcome of this project will be a tradeoff between accuracy and simplicity. Pre-processing will be used to "fingerprint" feeds, then supervised learning in the form of linear discriminant analysis will be used to attribute authorship. As requested by a prospective user of the final code result, this project will account for the fact that many people would rather use something they can *understand* than something that "claims" to be most effective.
 
 ### Data Acquisition and Description:
 
-**Summary:** *I have chosen to use a minimum of 500 tweets from all US Senators as the corpus for testing.*
+**Summary:** *For now, I have chosen to use two Twitter feeds ([DLin71](https://twitter.com/dlin71) and [NinjaEconomics](https://twitter.com/NinjaEconomics)) for demonstration purposes. For the perfection stage, I will use a minimum of 500 tweets from [all US Senators](https://twitter.com/gov/lists/us-senate/members?lang=en) as the corpus for testing.*
 
 According to research done by Drexel University Researchers who applied stylometry techniques to more open-ended text passages (namely internet black market communications), the accuracy of a classifier [does not improve much after five thousand words from a given author](https://youtu.be/xL9aam3ZUlk?t=12m40s) have been used to train the model.
 
 Combining that information with existing analysis of [typical tweet character lengths](https://smk.co/article/the-average-tweet-length-is-28-characters-long-and-other-interesting-facts), I suspect that **five-hundred tweets** from all US Senators should have sufficient unstructured data to potentially build an accurate predictor for unattributed tweets from those same individuals. This is in part because public officials are likely to tweet at greater length than average users who use the service for leisure alone.
 
-As of this document draft, I am current in the process of installing a [Ruby API utility](https://github.com/sferik/t) that allows a user to export a given Twitter feed to CSV format, which can easily be read into Jupyter. Once I have the dependencies sorted out, a CSV file for any given Twitter fead should be easily accessible in raw CSV form. Previously I utilized Twitter's API using Twython as follows, but this lacked the functionality I was looking for:
+For now I am limiting myself to two feeds that are focused on the same subject matter, thus ridding the temptation to rely on topic modeling. Prospective users of the code notebooks that will be produced insisted I start with something they could understand rather than focus on high accuracy.
+
+Previously I utilized Twitter's API using Twython as follows, but this lacked the functionality I was looking for:
 
 ```python
 def __main__():
@@ -57,20 +72,75 @@ def __main__():
 __main__()
 ```
 
-Instead, I tentatively plan on doing the following:
+Instead, I found that the following Tweepy script served my needs quite well. I modified it so it only included timestamps for tweets as well as their raw text content.
 
-* Install the previously mentioned Twitter API utility that relies on Ruby
-* Run the following command for each feed: **t timeline [username] -n 500 --csv > timeline.csv**
-* Aggregate all one-hundred feeds into a single CSV file to read into Jupyter.
-* Begin some pre-processing steps that will allow for logistic regression modeling later.
+```
+import tweepy
+import csv
+import sys
+
+#Twitter API credentials (I removed my access tokens here too)
+consumer_key = ""
+consumer_secret = ""
+access_key = ""
+access_secret = ""
+
+
+def get_all_tweets(screen_name):
+        #Twitter only allows access to a users most recent 3240 tweets with this method
+        
+        #authorize twitter, initialize tweepy
+        auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+        auth.set_access_token(access_key, access_secret)
+        api = tweepy.API(auth)
+        
+        #initialize a list to hold all the tweepy Tweets
+        alltweets = []  
+        
+        #make initial request for most recent tweets (200 is the maximum allowed count)
+        new_tweets = api.user_timeline(screen_name = screen_name,count=200)
+        
+        #save most recent tweets
+        alltweets.extend(new_tweets)
+        
+        #save the id of the oldest tweet less one
+        oldest = alltweets[-1].id - 1
+        
+        #keep grabbing tweets until there are no tweets left to grab
+        while len(new_tweets) > 0:
+                print "getting tweets before tweet ID %s" % (oldest)
+                
+                #all subsiquent requests use the max_id param to prevent duplicates
+                new_tweets = api.user_timeline(screen_name = screen_name,count=200,max_id=oldest)
+                
+                #save most recent tweets
+                alltweets.extend(new_tweets)
+                
+                #update the id of the oldest tweet less one
+                oldest = alltweets[-1].id - 1
+                
+                print "...%s tweets downloaded so far" % (len(alltweets))
+        
+        #transform the tweepy tweets into a 2D array that will populate the csv 
+        outtweets = [[tweet.created_at, tweet.text.encode("utf-8")] for tweet in alltweets]
+        
+        #write the csv  
+        with open('%s_tweets.csv' % screen_name, 'wb') as f:
+                writer = csv.writer(f)
+                writer.writerow(["Time and Date Tweeted","Raw Tweet Content"])
+                writer.writerows(outtweets)
+        
+        pass
+
+
+if __name__ == '__main__':
+        #pass in the username of the account you want to download
+        get_all_tweets("balajis")
+```
 
 ### Pre-processing
 
-* Will be adding sample code blocks soon.
-
-### Early Findings
- 
-*To be added this weekend as soon as I successfully utilize Twitter's API as needed*
+The pre-processing phase involves taking a CSV file for any given Twitter feed and extracting information about the raw content that will be useful for logistic regression. This can be thought of as the digital equivalent of Ronald Fisher making his Iris sample measurements for later classification. The next question at hand is deciding which features to include in the modeling process.
 
 ### Which features?
 
@@ -81,21 +151,31 @@ This is a tentative sample of features which were selected due to the possible l
 * Word choice frequency and contraction use
 * Distribution of "stop" words (that have no special meaning)
 * Average hashtags per tweet/which hashtags
+* Use and frequency of emojis or "smiley" character sequences
 * Frequency of replies to other users/which users
 * Frequency of linking to other sites/which domains
 * Absence or presence of text placed before or after links
-* Possibile topic modeling, though that wouldn't be "true" stylometry.
+* Whether or not the original title of an article is included
 
+Other features worth considering that do not stem from text style may include:
+
+* Distribution of original versus retweets in a given feed
+* Time series analysis of when tweet activity occurs from a user
+* Possibile topic modeling, though that wouldn't be "true" stylometry
+
+Overall, all of the possible features can be measured in at least one of three ways: *whether* something exists in a feed, *what* variety, and *how much*. For instance, hashtags and emojis can be measured in all three manners.
+
+This means the question of whether or not *statistically unique* patterns in a feed exist will almost always be yes, but this still leaves the issue of whether particular traits *persist* throughout new tweets. Both traits are necessary in order for a measured feature to qualify as a *writer invariant*.
 
 ### Challenges and Successes
 
-At the time of this draft, the primary challenges have been preliminary things such as installing the the Ruby dependencies for the command interface I hope to interact with Twitter's API with.
+Finding an easy means of using Twitter's API to export tweets in CSV form took up the most time early on, but the modified Tweepy script above proved sufficient. From there the next challenge was writing code blocks for each prospective feature listed above, and finding a way of successfully looping them over each tweet in any analyzed feed. Here the goal was to pre-process the CSV files of each Twitter feed to obtain numeric figures. 
 
-Because solving this would be crossing a major hurdle, I have chosen to take a release early, release often approach to this document.
+[More to come]
 
 ### Possible Extensions or Business Applications
 
-*To be added tonight*
+This project has plenty of overlap with other software tasks, which include the following:
 
-
-
+* Readability filters
+* More to be listed
