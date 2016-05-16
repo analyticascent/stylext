@@ -74,7 +74,7 @@ __main__()
 
 Instead, I found that the following Tweepy script served my needs quite well. I modified it so it only included timestamps for tweets as well as their raw text content.
 
-```
+```python
 import tweepy
 import csv
 import sys
