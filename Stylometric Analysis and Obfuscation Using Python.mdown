@@ -47,8 +47,6 @@ The outcome of this project will be a tradeoff between accuracy and simplicity. 
 
 According to research done by Drexel University Researchers who applied stylometry techniques to more open-ended text passages (namely internet black market communications), the accuracy of a classifier [does not improve much after five thousand words from a given author](https://youtu.be/xL9aam3ZUlk?t=12m40s) have been used to train the model.
 
-Combining that information with existing analysis of [typical tweet character lengths](https://smk.co/article/the-average-tweet-length-is-28-characters-long-and-other-interesting-facts), I suspect that **five-hundred tweets** from all US Senators should have sufficient unstructured data to potentially build an accurate predictor for unattributed tweets from those same individuals. This is in part because public officials are likely to tweet at greater length than average users who use the service for leisure alone.
-
 For now I am limiting myself to two feeds that are focused on the same subject matter, thus ridding the temptation to rely on topic modeling. Prospective users of the code notebooks that will be produced insisted I start with something they could understand rather than focus on high accuracy.
 
 Previously I utilized Twitter's API using Twython as follows, but this lacked the functionality I was looking for:
