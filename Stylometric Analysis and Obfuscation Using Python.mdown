@@ -43,7 +43,7 @@ The outcome of this project will be a tradeoff between accuracy and simplicity. 
 
 ### Data Acquisition and Description:
 
-**Summary:** *For now, I have chosen to use two Twitter feeds ([DLin71](https://twitter.com/dlin71) and [NinjaEconomics](https://twitter.com/NinjaEconomics)) for demonstration purposes. For the perfection stage, I will use a minimum of 500 tweets from [all US Senators](https://twitter.com/gov/lists/us-senate/members?lang=en) as the corpus for testing.*
+**Summary:** *For now, I have chosen to use two Twitter feeds ([DLin71](https://twitter.com/dlin71) and [NinjaEconomics](https://twitter.com/NinjaEconomics)) for demonstration purposes.
 
 According to research done by Drexel University Researchers who applied stylometry techniques to more open-ended text passages (namely internet black market communications), the accuracy of a classifier [does not improve much after five thousand words from a given author](https://youtu.be/xL9aam3ZUlk?t=12m40s) have been used to train the model.
 
