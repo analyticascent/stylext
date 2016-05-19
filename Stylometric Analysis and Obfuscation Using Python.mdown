@@ -36,7 +36,7 @@ This project can be thought of as a more sophisticated version of what many cons
 * Utilizing Twitter's API to acquire tweets in CSV form
 * Write code blocks for each of the tweet features being measured
 * Pre-process tweets so linear discriminant analysis can be applied
-* Apply logistic regression to attribute authorship of unlabeled tweets
+* Apply logistic regression to build authorship attribution model
 * If possible, develop methods for subverting those classification schemes
 
 The outcome of this project will be a tradeoff between accuracy and simplicity. Pre-processing will be used to "fingerprint" feeds, then supervised learning in the form of linear discriminant analysis will be used to attribute authorship. As requested by a prospective user of the final code result, this project will account for the fact that many people would rather use something they can *understand* than something that "claims" to be most effective.
