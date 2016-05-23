@@ -4,6 +4,8 @@
 
 ___
 
+### Executive Summary:
+
 **Stylometry** is the process of distinguishing one author from another through unique writing styles. Specifically, it attempts to identify *writer invariants* - that is, characteristics of author passages that are both *unique* to the same author and *persist* throughout most author passages. This capstone project will apply such techniques to the analysis of raw Twitter data to explore their feasability given Twitter's 140-character limit per post.
 
 My aim is to limit myself to techniques that anyone who has worked with the [the iris classification problem](https://en.wikipedia.org/wiki/Iris_flower_data_set) can understand. This is because some of the prospective users of my final result want to know for *themselves* how stylometry works in practice, and these people found a well-known set of tools in this area ([Jstylo and Anonymouth](https://psal.cs.drexel.edu/index.php/JStylo-Anonymouth)) to not be user-friendly for laypersons.
@@ -11,6 +13,19 @@ My aim is to limit myself to techniques that anyone who has worked with the [the
 Adhering to their value of "don't trust what you can't understand," the executible result will show how two twitter feeds can be "fingerprinted" in a manner that allows attribution of unnamed tweets from either user to take place. Over time I plan to continue expanding the proof of concept to work with a wider variety of feeds as well as additional machine learning techniques.
 
 As successful methods for "fingerprinting" feeds are found, adversarial techniques for obfuscating writing styles will be explored as well. My aim is to develop a relatively easy process for protecting the pseudonymity of individuals on social media, as well as demonstrate that character limits on posts do not prevent unique posting styles from surfacing.
+
+##### An Extension of the Iris Classification Problem
+
+This project can be thought of as a more sophisticated version of what many consider to be the "Hello world" of machine learning: [The Iris classification problem](https://en.wikipedia.org/wiki/Iris_flower_data_set). Rather than classifying *four* existing measurement features (length/width measurements of *sepals and petals) under *three* categorical outcomes, this project will entail the use of *over a dozen features* to attribute tweets to a *hundred categorical outcomes.* From start to finish, it will boil down to the following:
+
+* Utilizing Twitter's API to acquire tweets in CSV form
+* Write code blocks for each of the tweet features being measured
+* Pre-process tweets so linear discriminant analysis can be applied
+* Apply logistic regression to build authorship attribution model
+* If possible, develop methods for subverting those classification schemes
+
+The outcome of this project will be a tradeoff between accuracy and simplicity. Pre-processing will be used to "fingerprint" feeds, then supervised learning in the form of linear discriminant analysis will be used to attribute authorship. As requested by a prospective user of the final code result, this project will account for the fact that many people would rather use something they can *understand* than something that "claims" to be most effective.
+
 
 ### Problem and Hypothesis:
 
@@ -28,18 +43,6 @@ My **hypothesis** is that despite the fact that Twitter comments ('tweets') are 
 * A user's **choice** and **frequency** of emoji usage.
 
 Placing a very short character limit on any social media posts may force users to develop *unique* ways of making text more succinct (such as abbreviations or chat slang). With *pure* stylometry, an effective scheme for authorship attribution is able to achieve it's goal without inferring from the subject matter in the passage itself. Posts with 140 characters or less should still develop writer invariants that can be detected through pre-processing methods discussed later in this paper. Though enhanced techniques for identifying authors *might* be possible using various forms of topic modeling, those are (for now) beyond the scope of this project. I will limit my focus to features that are independent of whatever topic is being discussed.
-
-### An Extension of the Iris Classification Problem
-
-This project can be thought of as a more sophisticated version of what many consider to be the "Hello world" of machine learning: [The Iris classification problem](https://en.wikipedia.org/wiki/Iris_flower_data_set). Rather than classifying *four* existing measurement features (length/width measurements of *sepals and petals) under *three* categorical outcomes, this project will entail the use of *over a dozen features* to attribute tweets to a *hundred categorical outcomes.* From start to finish, it will boil down to the following:
-
-* Utilizing Twitter's API to acquire tweets in CSV form
-* Write code blocks for each of the tweet features being measured
-* Pre-process tweets so linear discriminant analysis can be applied
-* Apply logistic regression to build authorship attribution model
-* If possible, develop methods for subverting those classification schemes
-
-The outcome of this project will be a tradeoff between accuracy and simplicity. Pre-processing will be used to "fingerprint" feeds, then supervised learning in the form of linear discriminant analysis will be used to attribute authorship. As requested by a prospective user of the final code result, this project will account for the fact that many people would rather use something they can *understand* than something that "claims" to be most effective.
 
 ### Data Acquisition and Description:
 
