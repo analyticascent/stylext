@@ -35,14 +35,14 @@ In the absence of usernames, what *features* can we best identify tweet authorsh
 * **Synonyms:** Word choice, contraction use, abbreviations, internet slang, etc.
 * **Punctuation:** Choice between comma, semicolon, or hyphen use, among other things. 
 
-My **hypothesis** is that despite the fact that Twitter comments ('tweets') are limited to 140 characters, there are features that are *unique to tweets* which would allow them to be just as attributable in a *non-adversarial setting* (no conscious attempt to obfuscate 'tweet' style by authors). These include, but are not limited to:
+My **hypothesis** is that despite the fact that Twitter comments ('tweets') are limited to 140 characters, there are features that are *unique to tweets* which would enable them to be easily attributable in a *non-adversarial setting* (no conscious attempt to obfuscate 'tweet' style by authors). These features include, but are not limited to:
 
 * The use of **hashtags** in twitter comments.
 * How often a user **replies** to others.
 * The frequency at which a user **links** to other sites.
 * A user's **choice** and **frequency** of emoji usage.
 
-Placing a very short character limit on any social media posts may force users to develop *unique* ways of making text more succinct (such as abbreviations or chat slang). With *pure* stylometry, an effective scheme for authorship attribution is able to achieve it's goal without inferring from the subject matter in the passage itself. Posts with 140 characters or less should still develop writer invariants that can be detected through pre-processing methods discussed later in this paper. Though enhanced techniques for identifying authors *might* be possible using various forms of topic modeling, those are (for now) beyond the scope of this project. I will limit my focus to features that are independent of whatever topic is being discussed.
+Placing a very short character limit on any social media posts may force users to develop *unique* ways of making text more succinct (such as abbreviations or chat slang). With *pure* stylometry, an effective scheme for authorship attribution is able to achieve it's goal without relying on choice of subject matter. Posts with 140 characters or less should still develop writer invariants that can be detected through pre-processing methods discussed later in this paper. Though enhanced techniques for identifying authors *might* be possible using various forms of topic modeling, those are (for now) beyond the scope of this project. I will limit my focus to features that are independent of whatever topic is being discussed.
 
 ### Data Acquisition and Description:
 
@@ -50,7 +50,7 @@ Placing a very short character limit on any social media posts may force users t
 
 According to research done by Drexel University Researchers who applied stylometry techniques to more open-ended text passages (namely internet black market communications), the accuracy of a classifier [does not improve much after five thousand words from a given author](https://youtu.be/xL9aam3ZUlk?t=12m40s) have been used to train the model.
 
-For now I am limiting myself to two feeds that are focused on the same subject matter, thus ridding the temptation to rely on topic modeling. Prospective users of the final code result have insisted I start with something *they could understand* rather than focus on high accuracy.
+I am limiting myself to two feeds that are focused on the same subject matter, thus reducing the possibility that the final model reliability stems from differences in what two users are discussing (that would not be true stylometry). Prospective users of the final code result have insisted I start with something *they could understand* rather than focus on high accuracy.
 
 Previously I utilized Twitter's API using Twython in a code editor, but this lacked the functionality I was looking for:
 
@@ -73,7 +73,7 @@ def __main__():
 __main__()
 ```
 
-Instead, I found that the following Tweepy script served my needs quite well. I modified it so it only included timestamps for tweets as well as their raw text content.
+Instead, I found that the [following Tweepy script](https://gist.github.com/yanofsky/5436496) served my needs quite well. I modified it so it only included timestamps for tweets as well as their raw text content.
 
 ```python
 import tweepy
@@ -136,14 +136,14 @@ def get_all_tweets(screen_name):
 
 if __name__ == '__main__':
         #pass in the username of the account you want to download
-        get_all_tweets("balajis")
+        get_all_tweets("balajis") #Balajis is the first feed I ever tested the script on my own computer with
 ```
 
-### Pre-processing
+### Pre-processing:
 
 The pre-processing phase involves taking a CSV file for any given Twitter feed and extracting information about the raw content that will be useful for logistic regression. This can be thought of as the digital equivalent of Ronald Fisher making his Iris sample measurements for later classification. The next question at hand is deciding which features to include in the modeling process.
 
-### Which features?
+##### Which features?
 
 This is a sample of features which were considered due to the possible likelihood that they are both persistent and unique to any given Twitter feed:
 
@@ -164,7 +164,7 @@ Other features worth considering that do not stem from text style may include:
 * Time series analysis of when tweet activity occurs from a user
 * Possibile topic modeling, though that wouldn't be "true" stylometry
 
-Overall, all of the possible features can be measured in at least one of three ways: *whether* something exists in a feed, *what* variety, and *how much*. For instance, hashtags and emojis can be measured in all three manners.
+Overall, all of the possible features can be measured in at least one of three ways: *whether* something exists in a feed, *what variety,* and *how much*. For instance, hashtags and emojis can be measured in all three manners (does a feed contain them, which ones, how often).
 
 This means the question of whether or not *statistically unique* patterns in a feed exist will almost always be yes, but this still leaves the issue of whether particular traits *persist* throughout new tweets. Both traits are necessary in order for a measured feature to qualify as a *writer invariant*.
 
@@ -186,7 +186,7 @@ Possibly the biggest challenge is narrowing down the list of chosen features so 
 * Equal signs
 * Slash marks
 
-These were selected because the frequency of use for any of these in a tweet by a user is more likely to persist *regardless of the topic* being discussed. They work well for demonstration purposes, especially if the aim is to use code someone new to python would be more likely to grasp:
+These were selected because the frequency of use for any of these in a tweet by a user is more likely to persist regardless of the *topic* being discussed. They work well for demonstration purposes, especially if the aim is to use code someone new to python may want to modify for their own uses:
 
 ```python
 z = 49.0
@@ -216,12 +216,16 @@ In a nutshell, the script above will go over every piece of 'raw text' in a row 
 
 There are several potential features that are especially unique to tweets that could serve predictive power:
 
-* The hash symbol (#), which is used to make a tweet present under certain "hashtags"
-* The "at" symbol (@), which is placed before the name of another Twitter user if someone is trying to message ("tweet") them
-* For CSV files generated by the Tweepy script above, "RT" indicates that the content of that tweet came from someone else. How often someone decides to "retweet" other people count turn out to be predictive of who they are.
-* "http" in the raw text of a tweet is almost certainly an indication that they have linked to something. How often a user choses to do this may allow some level of attribution.
+* The hash symbol (**#**), which is used to make a tweet present under certain "hashtags"
+* The "at" symbol (**@**), which is placed before the name of another Twitter user if someone is trying to message ("tweet") them
+* For CSV files generated by the Tweepy script above, "**RT**" indicates that the content of that tweet came from someone else. How often someone decides to "retweet" other people count turn out to be predictive of who they are.
+* "**http**" in the raw text of a tweet is almost certainly an indication that they have linked to something. How often a user choses to do this may allow some level of attribution.
 
 Because of the nearly limitless ways of deciding *what* characters to look for, and *how* to measure them (Median per tweet? Average in a week of activity? The possibilities are potentially infinite.), I chose to keep it simple and stick with the *average occurance per tweet* for the features I mentioned above. How I might approach this differently in the future is anyone's guess.  
+
+### Logistic Regression Model
+
+*Logistic regression* is a method of
 
 ### Challenges and Successes
 
