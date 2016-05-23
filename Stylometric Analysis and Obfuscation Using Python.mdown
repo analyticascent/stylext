@@ -16,11 +16,11 @@ As successful methods for "fingerprinting" feeds are found, adversarial techniqu
 
 ##### An Extension of the Iris Classification Problem
 
-This project can be thought of as a more sophisticated version of what many consider to be the "Hello world" of machine learning: [The Iris classification problem](https://en.wikipedia.org/wiki/Iris_flower_data_set). Rather than classifying *four* existing measurement features (length/width measurements of *sepals and petals) under *three* categorical outcomes, this project will entail the use of *over a dozen features* to attribute tweets to a *hundred categorical outcomes.* From start to finish, it will boil down to the following:
+This project can be thought of as a more sophisticated version of what many consider to be the "Hello world" of machine learning: [The Iris classification problem](https://en.wikipedia.org/wiki/Iris_flower_data_set). Rather than classifying *four* existing measurement features (length/width measurements of *sepals and petals) under *three* categorical outcomes, this project will entail the use of *over a dozen features* to attribute tweets between *two categorical outcomes.* From start to finish, it will boil down to the following:
 
 * Utilizing Twitter's API to acquire tweets in CSV form
 * Write code blocks for each of the tweet features being measured
-* Pre-process tweets so linear discriminant analysis can be applied
+* Pre-process (fingerprint) users so logistic regression can be applied
 * Apply logistic regression to build authorship attribution model
 * If possible, develop methods for subverting those classification schemes
 
