@@ -15,7 +15,7 @@ There are numerous ways of testing the accuracy and so many ways of combining va
 * "Fingerprint" feeds using Ipython notebook
 * Use logistic regression for Tweet attribution
 
-#### Project Experimentation:
+#### Ongoing Experimentation:
 
 * Different Twitter datasets
 * Varied choice of features
