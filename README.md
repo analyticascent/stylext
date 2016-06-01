@@ -9,8 +9,14 @@ I will continue improving this project by experimenting with various machine lea
 
 There are numerous ways of testing the accuracy and so many ways of combining various features in various model approaches. This will be an open-ended project that I intend to continue improving until I get too occupied with other things. 
 
-### Stages for First Iteration:
+#### Stages for First Iteration:
 
 * Acquire Tweets using Tweepy API script
 * "Fingerprint" feeds using Ipython notebook
 * Use logistic regression for Tweet attribution
+
+#### Project Experimentation:
+
+* Different Twitter datasets
+* Varied choice of features
+* Other attribution models
