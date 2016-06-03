@@ -1,7 +1,9 @@
 # Stylext
-I began this project as a capstone for a [General Assembly course](https://generalassemb.ly/education/data-science/) I took in the spring of 2016. Work obligations (and the need to keep making minimum payments on a credit card) inhibited me from finishing the project as soon as intended. However, I decided to continue working on it in order to prepare myself for future data science projects/courses. It has served as useful practice for (and demonstration of) data acquisition, pre-processing, and analysis.
+I began this project as a capstone for a [General Assembly course](https://generalassemb.ly/education/data-science/) I took in the spring of 2016. Work obligations (and the need to keep making minimum payments on a credit card) inhibited me from finishing the project to the level of complexity I originally intended. However, I decided to continue working on it in order to prepare myself for future data science projects/courses. It has served as useful practice for (and demonstration of) data acquisition, pre-processing, and analysis.
 
-I will continue improving this project by experimenting with various machine learning models and ensemble techniques. After the course, it will now go through the following stages:
+Anyone who is familiar with the Iris classification problem can conceptually understand how this project works. Instead of petal measurements however, average occurance of certain characters per tweet is used. More sophisticated machine learning features can be used, but simplicity is prioritized over accuracy for demonstration purposes.
+
+I will continue improving this project by experimenting with other various machine learning models and ensemble techniques. After the course, it will now go through the following stages:
 
 * Create a time-series model that can "fingerprint" user tweet habits (potentially giving away their time zone).
 * Expand the entire model to include more training features, and the feeds of all US senators.
