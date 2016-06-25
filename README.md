@@ -22,3 +22,5 @@ There are numerous ways of testing the accuracy and so many ways of combining va
 * Different Twitter datasets
 * Varied choice of features
 * Other attribution models
+
+The end goal with all this is a utility that can disguise the writing style of a user as well as make it more readable to a general audience. It aims to be simpler to understand than jstylo and anonymouth. The full description for this project can be [read here](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown).
