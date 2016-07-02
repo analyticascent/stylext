@@ -6,10 +6,10 @@ Anyone who is familiar with the Iris classification problem can conceptually und
 I will continue improving this project by experimenting with other various machine learning models and ensemble techniques. After the course, it will now go through the following stages:
 
 * Create a time-series model that can "fingerprint" user tweet habits (potentially giving away their time zone).
-* Expand the entire model to include more training features, and the feeds of all US senators.
-* Continue improving the accuracy over time while also developing ways of subverting those techniques as well.
+* Expand the entire model to include more training features, and the feeds of all US senators and representatives.
+* Continue improving the accuracy over time while also developing ways of subverting those same techniques as well.
 
-There are numerous ways of testing the accuracy and so many ways of combining various features in various model approaches. This will be an open-ended project that I intend to continue improving until I get too occupied with other things. 
+There are numerous ways of defining ideal accuracy and a near infinite number of ways of combining various features in various model approaches. This will be an open-ended project that I intend to continue improving until I get too occupied with other things. That likely will not be an issue until next year, maybe.
 
 #### Stages for First Iteration:
 
