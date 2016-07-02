@@ -13,9 +13,9 @@ There are numerous ways of testing the accuracy and so many ways of combining va
 
 #### Stages for First Iteration:
 
-* Acquire Tweets using Tweepy API script
+* Acquire Tweets using a Tweepy API script
 * "Fingerprint" feeds using Ipython notebook
-* Use logistic regression for Tweet attribution
+* Use machine learning for Tweet attribution
 
 #### Ongoing Experimentation:
 
