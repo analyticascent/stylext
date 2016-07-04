@@ -22,11 +22,15 @@ ___
 
 **5. Naive Bayes and Logistic Regression**
 
-**6. Challenges and Successes**
+**6. Successes and Limitations**
 
 **7. Possible Application Extensions**
 
 **8. Final Conclusions and FAQ**
+
+ * Summary of Major Findings
+ 
+___
 
 ### 1. Executive Summary:
 
@@ -50,6 +54,7 @@ This project can be thought of as a more sophisticated version of what many cons
 
 The outcome of this project will be a tradeoff between accuracy and simplicity. Pre-processing will be used to "fingerprint" feeds, then supervised learning in the form of linear discriminant analysis will be used to attribute authorship. As requested by a prospective user of the final code result, this project will account for the fact that many people would rather use something they can *understand* than something that "claims" to be most effective.
 
+___
 
 ### 2. Problem and Hypothesis:
 
@@ -67,6 +72,8 @@ My **hypothesis** is that despite the fact that Twitter comments ('tweets') are 
 * A user's **choice** and **frequency** of emoji usage.
 
 Placing a very short character limit on any social media posts may force users to develop *unique* ways of making text more succinct (such as abbreviations or chat slang). With *pure* stylometry, an effective scheme for authorship attribution is able to achieve it's goal without relying on choice of subject matter. Posts with 140 characters or less should still develop writer invariants that can be detected through pre-processing methods discussed later in this paper. Though enhanced techniques for identifying authors *might* be possible using various forms of topic modeling, those are (for now) beyond the scope of this project. I will limit my focus to features that are independent of whatever topic is being discussed.
+ 
+___
 
 ### 3. Data Acquisition and Description:
 
@@ -162,6 +169,8 @@ if __name__ == '__main__':
         #pass in the username of the account you want to download
         get_all_tweets("balajis") #Balajis is the first feed I ever tested the script on my own computer with
 ```
+ 
+___
 
 ### 4. Pre-Processing/Wrangling:
 
@@ -215,8 +224,10 @@ These were selected because the frequency of use for any of these in a tweet by 
 ##### Sample Feature Script
 
 ```python
-z = 49.0
+z = 0
 total = 0
+
+periods = []
 
 for index, row in df.iterrows():
     tweet = str(row['raw_text'])
@@ -224,10 +235,15 @@ for index, row in df.iterrows():
     total = total + tweet.count('.')
     print
     print z, tweet.count('.'), total
+    
+    period_count = tweet.count('.')
+    period_count = int(period_count)
+    periods.append(period_count)
+    
+df['periods'] = periods
 
 # this gives us our final metrics
 z = int(z)
-z = z - 50.0
 average_period = total / z
 total_period = total
 
@@ -248,16 +264,22 @@ There are several potential features that are especially unique to tweets that c
 * "**http**" in the raw text of a tweet is almost certainly an indication that they have linked to something. How often a user choses to do this may allow some level of attribution.
 
 Because of the nearly limitless ways of deciding *what* characters to look for, and *how* to measure them (Median per tweet? Average in a week of activity? The possibilities are potentially infinite.), I chose to keep it simple and stick with the *average occurance per tweet* for the features I mentioned above. How I might approach this differently in the future is anyone's guess.  
+ 
+___
 
 ### 5. Naive Bayes and Logistic Regression
 
 *Logistic regression* is a method of
+ 
+___
 
-### 6. Challenges and Successes
+### 6. Successes and Limitations
 
 Finding an easy means of using Twitter's API to export tweets in CSV form took up the most time early on, but the modified Tweepy script above proved sufficient. From there the next challenge was writing code blocks for each prospective feature listed above, and finding a way of successfully looping them over each tweet in any analyzed feed. Here the goal was to pre-process the CSV files of each Twitter feed to obtain numeric figures. 
 
 [More to come]
+ 
+___
 
 ### 7. Possible Application Extensions
 
@@ -265,6 +287,8 @@ This project has plenty of overlap with other software tasks, which include the 
 
 * Readability filters
 * More to be listed
+ 
+___
 
 ### 8. Final Conclusions and FAQ
 
