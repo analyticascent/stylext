@@ -4,7 +4,31 @@
 
 ___
 
-### Executive Summary:
+## Contents:
+
+**1. Executive Summary**
+
+ * An Extension of the Iris Classification Problem
+
+**2. Problem and Hypothesis**
+
+**3. Data Acquisition and Description**
+
+**4. Pre-Processing/Wrangling**
+
+ * Which features?
+ 
+ * Sample Feature Script
+
+**5. Naive Bayes and Logistic Regression**
+
+**6. Challenges and Successes**
+
+**7. Possible Application Extensions**
+
+**8. Final Conclusions and FAQ**
+
+### 1. Executive Summary:
 
 **Stylometry** is the process of distinguishing one author from another through unique writing styles. Specifically, it attempts to identify *writer invariants* - that is, characteristics of author passages that are both *unique* to the same author and *persist* throughout most author passages. This capstone project will apply such techniques to the analysis of raw Twitter data to explore their feasability given Twitter's 140-character limit per post.
 
@@ -27,7 +51,7 @@ This project can be thought of as a more sophisticated version of what many cons
 The outcome of this project will be a tradeoff between accuracy and simplicity. Pre-processing will be used to "fingerprint" feeds, then supervised learning in the form of linear discriminant analysis will be used to attribute authorship. As requested by a prospective user of the final code result, this project will account for the fact that many people would rather use something they can *understand* than something that "claims" to be most effective.
 
 
-### Problem and Hypothesis:
+### 2. Problem and Hypothesis:
 
 In the absence of usernames, what *features* can we best identify tweet authorship with that are statistically *unique* as well as *consistent* throughout an author's writing? It appears such features can largely be classified under the following categories:
 
@@ -44,7 +68,7 @@ My **hypothesis** is that despite the fact that Twitter comments ('tweets') are 
 
 Placing a very short character limit on any social media posts may force users to develop *unique* ways of making text more succinct (such as abbreviations or chat slang). With *pure* stylometry, an effective scheme for authorship attribution is able to achieve it's goal without relying on choice of subject matter. Posts with 140 characters or less should still develop writer invariants that can be detected through pre-processing methods discussed later in this paper. Though enhanced techniques for identifying authors *might* be possible using various forms of topic modeling, those are (for now) beyond the scope of this project. I will limit my focus to features that are independent of whatever topic is being discussed.
 
-### Data Acquisition and Description:
+### 3. Data Acquisition and Description:
 
 **Summary:** *For now, I have chosen to use two Twitter feeds ([DLin71](https://twitter.com/dlin71) and [NinjaEconomics](https://twitter.com/NinjaEconomics)) for demonstration purposes.*
 
@@ -139,11 +163,11 @@ if __name__ == '__main__':
         get_all_tweets("balajis") #Balajis is the first feed I ever tested the script on my own computer with
 ```
 
-### Pre-processing:
+### 4. Pre-Processing/Wrangling:
 
 The pre-processing phase involves taking a CSV file for any given Twitter feed and extracting information about the raw content that will be useful for logistic regression. This can be thought of as the digital equivalent of Ronald Fisher making his Iris sample measurements for later classification. The next question at hand is deciding which features to include in the modeling process.
 
-##### Which features?
+##### Which Features?
 
 This is a sample of features which were considered due to the possible likelihood that they are both persistent and unique to any given Twitter feed:
 
@@ -186,7 +210,9 @@ Possibly the biggest challenge is narrowing down the list of chosen features so 
 * Equal signs
 * Slash marks
 
-These were selected because the frequency of use for any of these in a tweet by a user is more likely to persist regardless of the *topic* being discussed. They work well for demonstration purposes, especially if the aim is to use code someone new to python may want to modify for their own uses:
+These were selected because the frequency of use for any of these in a tweet by a user is more likely to persist regardless of the *topic* being discussed. They work well for demonstration purposes, especially if the aim is to use code someone new to python may want to modify for their own uses.
+
+##### Sample Feature Script
 
 ```python
 z = 49.0
@@ -223,21 +249,27 @@ There are several potential features that are especially unique to tweets that c
 
 Because of the nearly limitless ways of deciding *what* characters to look for, and *how* to measure them (Median per tweet? Average in a week of activity? The possibilities are potentially infinite.), I chose to keep it simple and stick with the *average occurance per tweet* for the features I mentioned above. How I might approach this differently in the future is anyone's guess.  
 
-### Logistic Regression Model
+### 5. Naive Bayes and Logistic Regression
 
 *Logistic regression* is a method of
 
-### Challenges and Successes
+### 6. Challenges and Successes
 
 Finding an easy means of using Twitter's API to export tweets in CSV form took up the most time early on, but the modified Tweepy script above proved sufficient. From there the next challenge was writing code blocks for each prospective feature listed above, and finding a way of successfully looping them over each tweet in any analyzed feed. Here the goal was to pre-process the CSV files of each Twitter feed to obtain numeric figures. 
 
 [More to come]
 
-### Possible Extensions or Business Applications
+### 7. Possible Application Extensions
 
 This project has plenty of overlap with other software tasks, which include the following:
 
 * Readability filters
 * More to be listed
 
-### Conclusions
+### 8. Final Conclusions and FAQ
+
+This will now conclude with a summary of the results, as well as further information for those who wish to either use this project or adapt/improve upon it in some way. Readers who skip to this section can still get useful takeaways about the project - I refer to the rest of the paper when relevant.
+
+##### Summary of Major Findings
+
+Before this began, it had been asserted to me by a handful of privacy-minded friends (on Freenet of all places, where people should know better) that public "microblogs" are safe from being "figerprinted" for writer invariants. That is, because Twitter for instance has a 140-character
