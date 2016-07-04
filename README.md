@@ -1,4 +1,4 @@
-# Stylext: 
+# Stylext: A Twitter Stylometry Proof of Concept
 #### *Authorship Attribution and Obfuscation with Machine Learning (Scikit-Learn)*
 I began this project as a capstone for a [General Assembly course](https://generalassemb.ly/education/data-science/) I took in the spring of 2016. Work obligations (and the need to keep making minimum payments on a credit card) inhibited me from finishing the project to the level of complexity I originally intended. However, I decided to continue working on it in order to prepare myself for future data science projects/courses. It has served as useful practice for (and demonstration of) data acquisition, pre-processing, and analysis.
 
