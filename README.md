@@ -35,3 +35,5 @@ There are numerous ways of defining ideal accuracy and a near infinite number of
 * Different Twitter datasets
 * Varied choice of features
 * Other attribution models
+
+New development from yours truly will cease altogether when (a.) time put into it gives diminishing returns, and (b.) other projects begin taking up the bulk of my time.
