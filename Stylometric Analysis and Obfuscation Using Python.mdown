@@ -4,6 +4,8 @@
 
 ___
 
+*You will need [Python 2.7 Anaconda Distribution](https://www.continuum.io/downloads) in addition to [Tweepy](http://www.tweepy.org/) installed to run the project notebooks and scripts.*
+
 ## Contents:
 
 **1. Executive Summary**
