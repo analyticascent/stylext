@@ -36,4 +36,4 @@ There are numerous ways of defining ideal accuracy and a near infinite number of
 * Varied choice of features
 * Other attribution models
 
-New development from yours truly will cease altogether when (a.) time put into it gives diminishing returns, and (b.) other projects begin taking up the bulk of my time. Not so unusual of a benchmark now is it?
+New development from yours truly will cease altogether when (a) time put into it gives diminishing returns, and (b) other projects begin taking up the bulk of my time. Not so unusual of a benchmark now is it? 
