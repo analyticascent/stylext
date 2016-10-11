@@ -8,27 +8,27 @@ ___
 
 ## Contents:
 
-[**1. Executive Summary**](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#1-executive-summary)
+**1. [Executive Summary**](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#1-executive-summary)
 
  * [An Extension of the Iris Classification Problem](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#an-extension-of-the-iris-classification-problem)
 
-[**2. Problem and Hypothesis**](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#2-problem-and-hypothesis)
+**2. [Problem and Hypothesis**](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#2-problem-and-hypothesis)
 
-[**3. Data Acquisition and Description**](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#3-data-acquisition-and-description)
+**3. [Data Acquisition and Description**](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#3-data-acquisition-and-description)
 
-[**4. Pre-Processing/Wrangling**](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#4-pre-processingwrangling)
+**4. [Pre-Processing/Wrangling**](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#4-pre-processingwrangling)
 
  * [Which features?](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#which-features)
  
  * [Sample Feature Script](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#sample-feature-script)
 
-[**5. Naive Bayes and Logistic Regression**](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#5-naive-bayes-and-logistic-regression)
+**5. [Naive Bayes and Logistic Regression**](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#5-naive-bayes-and-logistic-regression)
 
-[**6. Successes and Limitations**](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#6-successes-and-limitations)
+**6. [Successes and Limitations**](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#6-successes-and-limitations)
 
-[**7. Possible Application Extensions**](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#7-possible-application-extensions)
+**7. [Possible Application Extensions**](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#7-possible-application-extensions)
 
-[**8. Final Conclusions and FAQ**](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#8-final-conclusions-and-faq)
+**8. [Final Conclusions and FAQ**](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#8-final-conclusions-and-faq)
 
  * [Summary of Major Findings](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#summary-of-major-findings)
  
