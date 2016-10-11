@@ -10,7 +10,7 @@ ___
 
 [**1. Executive Summary**](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#1-executive-summary)
 
- * An Extension of the Iris Classification Problem
+ * [An Extension of the Iris Classification Problem](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#an-extension-of-the-iris-classification-problem)
 
 [**2. Problem and Hypothesis**](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#2-problem-and-hypothesis)
 
