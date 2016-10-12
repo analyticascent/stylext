@@ -289,7 +289,12 @@ The more similar a given tweet is to one user versus the other, the further to t
 
 ##### What is Naive Bayes?
 
-*Naive Bayes* on the other hand is a model that works more similarly to how spam filters work.
+*Naive Bayes* on the other hand is a model that works more similarly to how spam filters work. It operates on *conditional* probability; that is, the probability that B will happen given that A occured. In the case of this project, the goal is to determine who made a tweet given that the word frequency of that tweet.
+
+![naive bayes visual](https://www.mathworks.com/help/examples/stats/TrainANaiveBayesClassifierExample_01.png)
+
+For this to be implemented in the Jupyter notebook used, there wasn't a need for as much preprocessing of the tweets. All that was needed was to convert the tweets into *document-term matrices* within the notebook. These are frequency distributions of terms that appear which are analogous to "statistical fingerprints" of the users being compared. 
+
 ___
 
 ### 6. Successes and Limitations
