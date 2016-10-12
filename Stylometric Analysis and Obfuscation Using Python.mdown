@@ -271,6 +271,10 @@ ___
 
 ### 5. Naive Bayes and Logistic Regression
 
+Two models were put to the test in attributing tweets from one user versus the other. Both have relative pros and cons which are described here.
+
+##### What is Logistic Regression?
+
 **Logistic regression** is a model used when the dependent feature *y* is categorical rather than continuous. In the case of this project, we are trying to see if any given tweet belongs to one user versus another. Below is a visual example of how it works in practice. 
 
 ![logistic regression visual](http://teaching.sociology.ul.ie/categorical/sigmoid.png)
@@ -278,6 +282,8 @@ ___
 First, the logistic regression model is trained with a sample of tweets from both users in question. The more distinct they are from each other, the more *horizontal* and relatively *flat* the graph would be. However, if the two users have very similar styles of tweets, the opposite will be the case, and narrower range that results will be poorer at distinguishing the two.
 
 The more similar a given tweet is to one user versus the other, the further to the left or right it will be categorized on the chart. Ideally we want the users to be different enough so the sigmoid is less narrow. That kind of distribution is less likely to lead to logistic regression wrongfully attributing a given tweet to one user versus another.
+
+##### What is Naive Bayes?
 
 Naive Bayes on the other hand is a model that works more similarly to how spam filters work.
 ___
