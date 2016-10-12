@@ -24,6 +24,10 @@ ___
 
 **5. [Naive Bayes and Logistic Regression**](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#5-naive-bayes-and-logistic-regression)
 
+ * [What is Logistic Regression?](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#what-is-logistic-regression)
+
+ * [What is Naive Bayes?](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#what-is-naive-bayes)
+
 **6. [Successes and Limitations**](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#6-successes-and-limitations)
 
 **7. [Possible Application Extensions**](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#7-possible-application-extensions)
@@ -275,7 +279,7 @@ Two models were put to the test in attributing tweets from one user versus the o
 
 ##### What is Logistic Regression?
 
-**Logistic regression** is a model used when the dependent feature *y* is categorical rather than continuous. In the case of this project, we are trying to see if any given tweet belongs to one user versus another. Below is a visual example of how it works in practice. 
+*Logistic regression* is a model used when the dependent feature *y* is categorical rather than continuous. In the case of this project, we are trying to see if any given tweet belongs to one user versus another. Below is a visual example of how it works in practice. 
 
 ![logistic regression visual](http://teaching.sociology.ul.ie/categorical/sigmoid.png)
  
@@ -285,7 +289,7 @@ The more similar a given tweet is to one user versus the other, the further to t
 
 ##### What is Naive Bayes?
 
-Naive Bayes on the other hand is a model that works more similarly to how spam filters work.
+*Naive Bayes* on the other hand is a model that works more similarly to how spam filters work.
 ___
 
 ### 6. Successes and Limitations
