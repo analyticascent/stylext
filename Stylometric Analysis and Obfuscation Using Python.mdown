@@ -89,6 +89,8 @@ According to research done by Drexel University Researchers who applied stylomet
 
 I am limiting myself to two feeds that are focused on the same subject matter, thus reducing the possibility that the final model reliability stems from differences in what two users are discussing (that would not be true stylometry). Prospective users of the final code result have insisted I start with something *they could understand* rather than focus on high accuracy.
 
+##### Twython
+
 Previously I utilized Twitter's API using Twython in a code editor, but this lacked the functionality I was looking for:
 
 ```python
@@ -109,6 +111,8 @@ def __main__():
 		print
 __main__()
 ```
+
+##### Tweepy
 
 Instead, I found that the [following Tweepy script](https://gist.github.com/yanofsky/5436496) served my needs quite well. I modified it so it only included timestamps for tweets as well as their raw text content.
 
