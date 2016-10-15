@@ -34,9 +34,7 @@ ___
 
 **6. [Successes and Limitations](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#6-successes-and-limitations)**
 
-**7. [Possible Application Extensions](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#7-possible-application-extensions)**
-
-**8. [Final Conclusions and FAQ](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#8-final-conclusions-and-faq)**
+**7. [Final Conclusions and FAQ](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#8-final-conclusions-and-faq)**
 
  * [Summary of Major Findings](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#summary-of-major-findings)
  
@@ -317,16 +315,7 @@ This may be the main difference between how logistic regression and naive bayes 
 
 ___
 
-### 7. Possible Application Extensions
-
-This project has plenty of overlap with other software tasks, which include the following:
-
-* Readability filters
-* More to be listed
- 
-___
-
-### 8. Final Conclusions and FAQ
+### 7. Final Conclusions and FAQ
 
 This will now conclude with a summary of the results, as well as further information for those who wish to either use this project or adapt/improve upon it in some way. Readers who skip to this section can still get useful takeaways about the project - I refer to the rest of the paper when relevant.
 
