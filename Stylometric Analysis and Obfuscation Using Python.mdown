@@ -310,7 +310,11 @@ ___
 Finding an easy means of using Twitter's API to export tweets in CSV form took up the most time early on, but the modified Tweepy script above proved sufficient. From there the next challenge was writing code blocks for each prospective feature listed above, and finding a way of successfully looping them over each tweet in any analyzed feed. Here the goal was to pre-process the CSV files of each Twitter feed to obtain numeric figures.
 
 In the end, all it took was a list comprehension function that iterated over every row to count how often a character appeared, and append that row with a new column containing the figure for that count. The code for this is in [section four above](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#sample-feature-script).
- 
+
+The resulting CSV file from the pre-processing was unnecessary when using multinomial naive bayes. For pre-processing, all that was needed was to convert the tweets into document-term matrices, which were then used to distinguish the two feeds just from word frequencies alone.
+
+This may be the main difference between how logistic regression and naive bayes was used in this project; the former was used to zero in on specific characters while the latter looked at word frequencies.
+
 ___
 
 ### 7. Possible Application Extensions
