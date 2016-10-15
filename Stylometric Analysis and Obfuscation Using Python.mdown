@@ -16,6 +16,10 @@ ___
 
 **3. [Data Acquisition and Description](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#3-data-acquisition-and-description)**
 
+ * [Twython](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#twython)
+
+ * [Tweepy](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#tweepy)
+
 **4. [Pre-Processing/Wrangling](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#4-pre-processingwrangling)**
 
  * [Which features?](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown#which-features)
