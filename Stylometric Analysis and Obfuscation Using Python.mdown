@@ -321,4 +321,11 @@ This will now conclude with a summary of the results, as well as further informa
 
 ##### Summary of Major Findings
 
-Before this began, it had been asserted to me by a handful of privacy-minded friends (on Freenet of all places, where people should know better) that public "microblogs" are safe from being "figerprinted" for writer invariants. That is, because Twitter for instance has a 140-character
+Before this began, it had been asserted to me by a handful of privacy-minded friends (on Freenet of all places, where people should know better) that public "microblogs" are safe from being "fingerprinted" for writer invariants. That is, because Twitter has a 140-character
+limit per post there is a lesser chance of detectable writing styles forming.
+
+![500 word limit stylometry article](https://raw.githubusercontent.com/analyticascent/stylext/master/500%20word%20limit%20stylometry.png)
+
+This turned out to be dead wrong. What actually takes place on Twitter is the use of slang, abbreviations, emojis, and other post habits that try to make the most of those character limits. In theory, any social media platform that imposes character limits on posts could lead to more detectable writer invariants forming for the same reasons.
+
+The same rules about adversarial stylometry apply to Twitter. Obfuscation of write-prints must be done to reduce authorship attribution, but a special edge applies to anyone wishing to conceal their writing style. Generating a write-print and concealing it is easier to do for one person than generating a write-print for multiple individuals and attributing authorship to one of them.
