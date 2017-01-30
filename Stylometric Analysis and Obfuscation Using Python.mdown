@@ -4,7 +4,7 @@
 
 ___
 
-*You will need [Python 2.7 Anaconda Distribution](https://www.continuum.io/downloads) in addition to [Tweepy](http://www.tweepy.org/) installed to run the project notebooks and scripts.*
+*You will need [Python 2.7 Anaconda Distribution](https://www.continuum.io/downloads) and [Tweepy](http://www.tweepy.org/) installed to run project code.*
 
 ## Contents:
 
@@ -42,7 +42,7 @@ ___
 
 ### 1. Executive Summary:
 
-**Stylometry** is the process of distinguishing one author from another through unique writing styles. Specifically, it attempts to identify *writer invariants* - that is, characteristics of author passages that are both *unique* to the same author and *persist* throughout most author passages. This capstone project will apply such techniques to the analysis of raw Twitter data to explore their feasability given Twitter's 140-character limit per post.
+**Stylometry** is the process of attributing authorship through unique writing styles. Specifically, it attempts to identify *writer invariants* - characteristics of author passages both *unique* to the same author and *persistent* throughout author passages. This project will apply such techniques to the analysis of raw Twitter data to explore their feasability given Twitter's 140-character limit per post.
 
 My aim is to limit myself to techniques that anyone who has worked with the [the iris classification problem](https://en.wikipedia.org/wiki/Iris_flower_data_set) can understand. This is because some of the prospective users of my final result want to know for *themselves* how stylometry works in practice, and these people found a well-known set of tools in this area ([Jstylo and Anonymouth](https://psal.cs.drexel.edu/index.php/JStylo-Anonymouth)) to not be user-friendly for laypersons.
 
