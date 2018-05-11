@@ -4,7 +4,7 @@
 
 ___
 
-*You will need [Python 2.7 Anaconda Distribution](https://www.continuum.io/downloads) and [Tweepy](http://www.tweepy.org/) installed to run project code.*
+*You will need [Python 3 Anaconda Distribution](https://www.continuum.io/downloads) and [Tweepy](http://www.tweepy.org/) installed to run project code.*
 
 ## Contents:
 
@@ -54,10 +54,10 @@ As successful methods for "fingerprinting" feeds are found, adversarial techniqu
 
 This project can be thought of as a more sophisticated version of what many consider to be the "Hello world" of machine learning: [The Iris classification problem](https://en.wikipedia.org/wiki/Iris_flower_data_set). Rather than classifying *four* existing measurement features (length/width measurements of *sepals and petals) under *three* categorical outcomes, this project will entail the use of *over a dozen features* to attribute tweets between *two categorical outcomes.* From start to finish, it will boil down to the following:
 
-* Utilizing Twitter's API to acquire tweets in CSV form
+* Utilizing Twitter's API to acquire user tweets in CSV form
 * Write code blocks for each of the tweet features being measured
-* Pre-process (fingerprint) users so logistic regression can be applied
-* Apply logistic regression to build authorship attribution model
+* Pre-process (fingerprint) users so classification can be applied
+* Apply classification algorithms to build authorship attribution model
 * If possible, develop methods for subverting those classification schemes
 
 The outcome of this project will be a tradeoff between accuracy and simplicity. Pre-processing will be used to "fingerprint" feeds, then supervised learning in the form of linear discriminant analysis will be used to attribute authorship. As requested by a prospective user of the final code result, this project will account for the fact that many people would rather use something they can *understand* than something that "claims" to be most effective.
