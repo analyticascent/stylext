@@ -3,6 +3,19 @@
 
 &nbsp;
 
+**Introduction:** The files in this repo can easily be used by anyone to learn basic text classification techniques. This is a supervised machine learning program that uses binary text classification to determine which of two twitter users authored a post on Twitter. No worries if that terminology sounds too complex to learn, the core concepts are straightforward:
+
+* **Supervised Machine Learning** involves training an algorithm to tell the difference between various things by feeding in labeled examples of things in each category you wish to sort new data (text, images, etc) into.
+* **Binary Text Classification** simply means using a text classifier to sort new text samples into one category or another (in the case of Stylext, which of two people wrote a Tweet).
+
+To appreciate why machine learning is beneficial for the task Stylext was coded for, consider two scenarios - determining if a number is prime versus determining which category a series of words belongs under. In the case of prime numbers, you only need to check for the following conditions: *Is the number divisible only by itself and the number 1?*
+
+So any programming language would simply need to take the following approach: *If the number is divisible by itself, the number 1, and no other numbers, then it's a prime number. Else, the number is not prime.*
+
+This is obviously a *low-dimensional* problem, and easy to code for in just about any modern programming language. But consider a scenario involving *high-dimensional* data, such as raw text. Text can be *vectorized* - that is, quantified by things like how often unique words, or even multi-word sequences appear in a document. Those corresponding values can be used as a "statistical fingerprint" of how to distinguish text samples from each other. But as you can imagine, writing a series of "if, then, else" statements to account for every possible arrangement of words in a document.
+
+&nbsp;
+
 **The technical description for this project can be [read here](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown).** 
 
 **Context:** I began this project as a capstone for a [General Assembly course](https://generalassemb.ly/education/data-science/) I took in the spring of 2016. Work obligations (and the need to keep making minimum payments on a credit card) inhibited me from finishing the project to the level of complexity I originally intended. However, I decided to continue working on it in order to prepare myself for future data science projects/courses, and it ultimately was satisfactory enough to meet course requirements. 
