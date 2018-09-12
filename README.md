@@ -3,10 +3,10 @@
 
 &nbsp;
 
-**Introduction:** The files in this repo can easily be used by anyone to learn basic text classification techniques. This is a supervised machine learning program that uses binary text classification to determine which of two twitter users authored a post on Twitter. No worries if that terminology sounds too complex to learn, the core concepts are straightforward:
+**Introduction:** The files in this repo can easily be used by anyone to learn basic text classification techniques. This is a supervised machine learning program that uses binary text classification to determine which of two twitter users authored various posts on Twitter. No worries if that terminology sounds too complex to learn, the core concepts are straightforward:
 
-* **Supervised Machine Learning** involves training an algorithm to tell the difference between various things by feeding in labeled examples of things in each category you wish to sort new data (text, images, etc) into.
-* **Binary Text Classification** simply means using a text classifier to sort new text samples into one category or another (in the case of Stylext, which of two people wrote a Tweet).
+* **Supervised Machine Learning** involves training an algorithm to tell the difference between various things by feeding in labeled examples of things in each category you wish to sort new data (text, images, etc) into. In this case, we are feeding in tweets that are known to have come from one Twitter user in addition to ones that came from another. The file read into the main Jupyter Notebook has the tweets labeled by the user they each came from.
+* **Binary Text Classification** simply means using a text classifier to sort new text samples into one category or another. In the case of Stylext, it is which of two people wrote a Tweet. Essentially we are taking the same general approach that many spam filters use to sort text passages, except we are attributing the authorship of tweets.
 
 To appreciate why machine learning is beneficial for the task Stylext was coded for, consider two scenarios - determining if a number is prime versus determining which category a series of words belongs under. In the case of prime numbers, you only need to check for the following conditions: *Is the number divisible only by itself and the number 1?*
 
@@ -14,7 +14,9 @@ So any programming language would simply need to take the following approach: *I
 
 This is obviously a *low-dimensional* problem, and easy to code for in just about any modern programming language. But consider a scenario involving *high-dimensional* data, such as raw text. Text can be *vectorized* - that is, quantified by things like how often unique words, or even multi-word sequences appear in a document. Those corresponding values can be used as a "statistical fingerprint" of how to distinguish text samples from each other. But as you can imagine, writing a series of "if, then, else" statements to account for every possible arrangement of words in a document.
 
-&nbsp;
+Stylext uses a *supervised machine learning* approach to the task at hand. Rather than try to write seperate conditional statements for every possible arrangement of 140 characters (this project was completed in the spring of 2016). There are literally orders of magnitude more ways of writing a tweet than there are atoms in the entire solar system (10<sup>250</sup> combinations using alphanumeric characters in English alone). It would be impractical to write a conditional statement for each of these! Machine learning on the other hand will only require that we have enough labeled examples to train a text classifier to "fingerprint" one Twitter user from another.
+
+---
 
 **The technical description for this project can be [read here](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown).** 
 
