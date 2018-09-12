@@ -10,9 +10,21 @@
 
 To appreciate why machine learning is beneficial for the task Stylext was coded for, consider two scenarios - determining if a number is prime versus determining which category a series of words belongs under. In the case of prime numbers, you only need to check for the following conditions: *Is the number divisible only by itself and the number 1?*
 
-So any programming language would simply need to take the following approach: *If the number is divisible by itself, the number 1, and no other numbers, then it's a prime number. Else, the number is not prime.*
+So any programming language would simply need to take the following approach: *If the number is divisible by itself, the number 1, and no other numbers, then it's a prime number. Else, the number is not prime.* [A simple Python example](https://stackoverflow.com/a/10666200):
 
-This is obviously a *low-dimensional* problem, and easy to code for in just about any modern programming language. But consider a scenario involving *high-dimensional* data, such as raw text. Text can be *vectorized* - that is, quantified by things like how often unique words, or even multi-word sequences appear in a document. Those corresponding values can be used as a "statistical fingerprint" of how to distinguish text samples from each other. But as you can imagine, writing a series of "if, then, else" statements to account for every possible arrangement of words in a document.
+```python
+def is_prime(n):
+    """check if integer n is a prime"""
+    # range starts with 2 and only needs to go up the squareroot of n
+    for x in range(2, int(n**0.5)+1):
+        if n % x == 0:
+            return False
+    return True
+```
+
+This is obviously a *low-dimensional* problem, and relatively easy to code for in most programming languages. Most will allow you to solve the problem with less than several lines of code.
+
+But consider a scenario involving *high-dimensional* data, such as raw text. Text can be *vectorized* - that is, quantified by things like how often unique words, or even multi-word sequences appear in a document. Those corresponding values can be used as a "statistical fingerprint" of how to distinguish text samples from each other. But as you can imagine, writing a series of "if, then, else" statements to account for every possible arrangement of words in a document.
 
 Stylext uses a *supervised machine learning* approach to the task at hand. Rather than try to write seperate conditional statements for every possible arrangement of 140 characters (this project was completed in the spring of 2016). There are literally orders of magnitude more ways of writing a tweet than there are atoms in the entire solar system (10<sup>250</sup> combinations using alphanumeric characters in English alone). It would be impractical to write a conditional statement for each of these! Machine learning on the other hand will only require that we have enough labeled examples to train a text classifier to "fingerprint" one Twitter user from another.
 
