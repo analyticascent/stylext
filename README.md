@@ -8,21 +8,19 @@
 * **Supervised Machine Learning** involves training an algorithm to tell the difference between various things by feeding in labeled examples of things in each category you wish to sort new data (text, images, etc) into. In this case, we are feeding in tweets that are known to have come from one Twitter user in addition to ones that came from another. The file read into the main Jupyter Notebook has the tweets labeled by the user they each came from.
 * **Binary Text Classification** simply means using a text classifier to sort new text samples into one category or another. In the case of Stylext, it is which of two people wrote a Tweet. Essentially we are taking the same general approach that many spam filters use to sort text passages, except we are attributing the authorship of tweets.
 
-To appreciate why machine learning is beneficial for the task Stylext was coded for, consider two scenarios - determining if a number is prime versus determining which category a series of words belongs under. In the case of prime numbers, you only need to check for the following conditions: *Is the number divisible only by itself and the number 1?*
+To appreciate why machine learning is beneficial for the task Stylext was coded for, consider two scenarios - determining if a number is even versus determining which person wrote a 140-character post. In the case of prime numbers, you only need to check for the following conditions: *Is the number divisible only by itself and the number 1?*
 
-So any programming language would simply need to take the following approach: *If the number is divisible by itself, the number 1, and no other numbers, then it's a prime number. Else, the number is not prime.* [A simple Python example](https://stackoverflow.com/a/10666200):
+So any programming language would simply need to take the following approach: ***If** dividing an integer by two leads to a whole number, **Then** return "Even" - **Else** return "False"* [A simple Python example](https://stackoverflow.com/a/10666200):
 
 ```python
-def is_prime(n):
-    """check if integer n is a prime"""
-    # range starts with 2 and only needs to go up the squareroot of n
-    for x in range(2, int(n**0.5)+1):
-        if n % x == 0:
-            return False
-    return True
+def is_even(n):
+    if n % 2 == 0: # checks if dividing by two leads to a whole number
+        return "Even"
+    else:
+        return "Odd"
 ```
 
-This is obviously a *low-dimensional* problem, and relatively easy to code for in most programming languages. Most will allow you to solve the problem with less than several lines of code.
+This is obviously a *low-dimensional* problem, and relatively easy to code for in most programming languages. Most will allow you to solve the problem with five or fewer lines of code.
 
 But consider a scenario involving *high-dimensional* data, such as raw text. Text can be *vectorized* - that is, quantified by things like how often unique words, or even multi-word sequences appear in a document. Those corresponding values can be used as a "statistical fingerprint" of how to distinguish text samples from each other. But as you can imagine, writing a series of "if, then, else" statements to account for every possible arrangement of words in a document.
 
