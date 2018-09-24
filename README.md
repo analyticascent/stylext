@@ -3,7 +3,7 @@
 
 &nbsp;
 
-**Introduction:** The files in this repo can easily be used by anyone to learn basic text classification techniques. This is a supervised machine learning program that uses binary text classification to determine which of two twitter users authored various posts on Twitter. No worries if that terminology sounds too complex to learn, the core concepts are straightforward:
+**Introduction:** The files in this repo can easily be used by anyone to learn basic text classification techniques. This is a supervised machine learning program that uses binary text classification to determine which of two Twitter users authored various posts on Twitter. No worries if that terminology sounds too complex to learn, the core concepts are straightforward:
 
 * **Supervised Machine Learning** involves training an algorithm to tell the difference between various things by feeding in labeled examples of things in each category you wish to sort new data (text, images, etc) into. In this case, we are feeding in tweets that are known to have come from one Twitter user in addition to ones that came from another. The file read into the main Jupyter Notebook has the tweets labeled by the user they each came from.
 * **Binary Text Classification** simply means using a text classifier to sort new text samples into one category or another. In the case of Stylext, it is which of two people wrote a Tweet. Essentially we are taking the same general approach that many spam filters use to sort text passages, except we are attributing the authorship of tweets.
@@ -26,7 +26,7 @@ This is obviously a *low-dimensional* problem, and relatively easy to code for i
 
 But consider a scenario involving *high-dimensional* data, such as raw text. Text can be *vectorized* - that is, quantified by things like how often unique words, or even multi-word sequences appear in a document. Those corresponding values can be used as a "statistical fingerprint" of how to distinguish text samples from each other. But as you can imagine, writing a series of "if, then, else" statements to account for every possible arrangement of words in a document.
 
-Stylext uses a *supervised machine learning* approach to the task at hand. Rather than try to write seperate conditional statements for every possible arrangement of 140 characters (this project was completed in the spring of 2016). There are literally orders of magnitude more ways of writing a tweet than there are atoms in the entire solar system (10<sup>250</sup> combinations using alphanumeric characters in English alone). It would be impractical to write a conditional statement for each of these! Machine learning on the other hand will only require that we have enough labeled examples to train a text classifier to "fingerprint" one Twitter user from another.
+Stylext uses a *supervised machine learning* approach to the task at hand. Rather than try to write separate conditional statements for every possible arrangement of 140 characters (this project was completed in the spring of 2016). There are literally orders of magnitude more ways of writing a tweet than there are atoms in the entire solar system (10<sup>250</sup> combinations using alphanumeric characters in English alone). It would be impractical to write a conditional statement for each of these! Machine learning on the other hand will only require that we have enough labeled examples to train a text classifier to "fingerprint" one Twitter user from another.
 
 ---
 
@@ -44,7 +44,7 @@ The reason this hypothesis turned out to be wrong ended up being very straightfo
 
 Stylext aims to be simpler to use and easier to modify than jstylo and anonymouth; both of which were the subject of complaints among those I recommended them to for not being easy to install/run/understand for laypersons. I have done my best to abide to the "don't trust what you can't comprehend" principle that some in the world of privacy tenaciously adhere to.
 
-Anyone who is familiar with the Iris classification problem can conceptually understand how this project works. Instead of petal measurements however, average occurance of certain characters per tweet is used. More sophisticated machine learning features can be used, but simplicity is prioritized over accuracy for demonstration purposes. This should make the tool more accessible to those who intend to use it for themselves.
+Anyone who is familiar with the Iris classification problem can conceptually understand how this project works. Instead of petal measurements however, average occurence of certain characters per tweet is used. More sophisticated machine learning features can be used, but simplicity is prioritized over accuracy for demonstration purposes. This should make the tool more accessible to those who intend to use it for themselves.
 
 ---
 
@@ -55,10 +55,10 @@ To work with something beyond the demo CSV files of tweets I used, you will need
 I will continue improving this project by experimenting with other various machine learning models and ensemble techniques. After the course, it will now go through the following stages:
 
 * Create a time-series model that can "fingerprint" user tweet habits (potentially giving away their time zone).
-* Expand the entire model to include more training features, and the feeds of all US senators and representatives.
+* Expand the entire model to include more training features and the feeds of all US senators and representatives.
 * Continue improving the accuracy over time while also developing ways of subverting those same techniques as well.
 
-There are numerous ways of defining ideal accuracy and a near infinite number of ways of combining various features in various model approaches. This will be an open-ended project that I intend to continue improving until I get too occupied with other things. That likely will not be an issue until next year, maybe.
+There are numerous ways of defining ideal accuracy and a nearly infinite number of ways of combining various features in various model approaches. This will be an open-ended project that I intend to continue improving until I get too occupied with other things. That likely will not be an issue until next year, maybe.
 
 #### Stages Executed for Project Completion:
 
