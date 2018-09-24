@@ -10,7 +10,9 @@
 
 To appreciate why machine learning is beneficial for the task Stylext was coded for, consider two scenarios - determining if a number is even versus determining which person wrote a 140-character post. In the case of prime numbers, you only need to check for the following conditions: *Is the number divisible only by itself and the number 1?*
 
-So any programming language would simply need to take the following approach: ***If** dividing an integer by two leads to a whole number, **Then** return "Even" - **Else** return "False"* [A simple Python example](https://stackoverflow.com/a/10666200):
+So any programming language would simply need to take the following approach: ***If** dividing an integer by two leads to a whole number, **Then** return "Even" - **Else** return "False"*
+
+The corresponding python code for this problem is simple for even non-programmers to follow:
 
 ```python
 def is_even(n):
