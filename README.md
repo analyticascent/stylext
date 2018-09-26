@@ -1,11 +1,15 @@
 # Stylext: A Twitter Stylometry Proof of Concept
-#### *Authorship Attribution and Obfuscation with Machine Learning (Scikit-Learn)*
+#### Authorship Attribution and Obfuscation with Machine Learning (Scikit-Learn)
 
 &nbsp;
 
-**Introduction:** The files in this repo can easily be used by anyone to learn basic text classification techniques. This is a supervised machine learning program that uses binary text classification to determine which of two Twitter users authored various posts on Twitter. No worries if that terminology sounds too complex to learn, the core concepts are straightforward:
+_For an overview of how the three main types of machine learning differ from each other and when they are put to use, read [this Stack Overflow post](https://stats.stackexchange.com/questions/144154/supervised-learning-unsupervised-learning-and-reinforcement-learning-workflow) for a bullet-point overview, [this Towards Data Science post](https://towardsdatascience.com/machine-learning-101-supervised-unsupervised-reinforcement-beyond-f18e722069bc) for greater detail, and [this NVIDIA blog post](https://blogs.nvidia.com/blog/2018/08/02/supervised-unsupervised-learning/) for additional context and case studies. If short on time, the least anyone reading this README needs to know is that Stylext is a **supervised** machine learning program. What that means is ellaborated on below._
 
-* **Supervised Machine Learning** involves training an algorithm to tell the difference between various things by feeding in *labeled* examples of things in each category you wish to sort new data (text, images, etc) into. In this case, we are feeding in tweets (the data) that are known to have come from one Twitter user in addition to ones that came from another (the labels). The file read into the main Jupyter Notebook has the tweets labeled by the user they each came from.
+&nbsp;
+
+**Introduction:** The files in this repo can easily be used by anyone to learn basic text classification techniques. This is a supervised machine learning program that uses binary text classification to determine _which of two Twitter users authored various posts on that site._ No worries if that terminology sounds too complex to learn, the core concepts are straightforward:
+
+* **Supervised Machine Learning** involves training an algorithm to tell the difference *chosen categories* of things by feeding in *labeled examples* of data (text, images, etc) that belong in whatever categories you wish to sort new data into. In this case, we are feeding in tweets (the data) that are known to have come from one Twitter user in addition to ones that came from another (the labels). The file read into the main Jupyter Notebook has the tweets labeled by the user they each came from in one of the [CSV file columns](https://github.com/analyticascent/stylext/blob/master/csv/tweets.csv).
 * **Binary Text Classification** simply means using a text classifier to sort new text samples into one category or another. In the case of Stylext, it is which of two people wrote a Tweet. Essentially we are taking the same general approach that many spam filters use to sort text passages, except we are attributing the authorship of tweets.
 
 To appreciate why machine learning is beneficial for the task Stylext was coded for, consider two scenarios - determining if a number is even versus determining which person wrote a 140-character post. In the case of prime numbers, you only need to check for the following conditions: *Is the number divisible only by itself and the number 1?*
@@ -28,6 +32,13 @@ But consider a scenario involving *high-dimensional* data, such as raw text. Tex
 
 Stylext uses a *supervised machine learning* approach to the task at hand. Rather than try to write separate conditional statements for every possible arrangement of 140 characters (this project was completed in the spring of 2016), you simply train it with sample data coming from the users you wish to distinguish. There are literally orders of magnitude more ways of writing a tweet than there are atoms in the entire solar system (10<sup>250</sup> combinations using alphanumeric characters in English alone). It would be impractical to write a conditional statement for each of these! Machine learning on the other hand will only require that we have enough labeled examples to train a text classifier to "fingerprint" one Twitter user from another.
 
+A supervised machine learning model used for classification is the result of the following:
+
+* Input data: What samples to train the model
+* Categories: What the data will be sorted into
+* Features: What the data will be sorted by
+* Algorithm: What math procedure will do the sorting
+* Optimization: What methods are used to fine tune the above
 ---
 
 **The technical description for this project can be [read here](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown).** 
