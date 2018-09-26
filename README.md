@@ -3,7 +3,7 @@
 
 &nbsp;
 
-_For an overview of how the three main types of machine learning differ from each other and when they are put to use, read [this Stack Overflow post](https://stats.stackexchange.com/questions/144154/supervised-learning-unsupervised-learning-and-reinforcement-learning-workflow) for a bullet-point overview, [this Towards Data Science post](https://towardsdatascience.com/machine-learning-101-supervised-unsupervised-reinforcement-beyond-f18e722069bc) for greater detail, and [this NVIDIA blog post](https://blogs.nvidia.com/blog/2018/08/02/supervised-unsupervised-learning/) for additional context and case studies. If short on time, the least anyone reading this README needs to know is that Stylext is a **supervised** machine learning program. What that means is ellaborated on below._
+_For an overview of how the three main types of machine learning differ from each other and when they are put to use, read [this Stack Overflow post](https://stats.stackexchange.com/questions/144154/supervised-learning-unsupervised-learning-and-reinforcement-learning-workflow) for a bullet-point overview, [this Towards Data Science post](https://towardsdatascience.com/machine-learning-101-supervised-unsupervised-reinforcement-beyond-f18e722069bc) for greater detail, and [this NVIDIA blog post](https://blogs.nvidia.com/blog/2018/08/02/supervised-unsupervised-learning/) for additional context and case studies. If short on time, the least anyone reading this README needs to know is that Stylext is a **supervised** machine learning program. What that means is elaborated on below._
 
 &nbsp;
 
