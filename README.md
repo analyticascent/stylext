@@ -19,11 +19,8 @@ So any programming language would simply need to take the following approach: **
 The corresponding python code for this problem is simple for even non-programmers to follow:
 
 ```python
-def is_even(n):
-    if n % 2 == 0: # checks if dividing by two leads to a whole number
-        return "Even"
-    else:
-        return "Odd"
+def even_or_odd(n):
+    return n % 2 == 0
 ```
 
 This is obviously a *low-dimensional* problem, and relatively easy to code for in most programming languages. Most will allow you to solve the problem with five or fewer lines of code.
