@@ -40,7 +40,7 @@ A supervised machine learning model used for classification is the result of the
 
 **The technical description for this project can be [read here](https://github.com/analyticascent/stylext/blob/master/Stylometric%20Analysis%20and%20Obfuscation%20Using%20Python.mdown).** 
 
-**Context:** I began this project as a capstone for a [General Assembly course](https://generalassemb.ly/education/data-science/) I took in the spring of 2016. Work obligations (and the need to keep making minimum payments on a credit card) inhibited me from finishing the project to the level of complexity I originally intended. However, I decided to continue working on it in order to prepare myself for future data science projects/courses, and it ultimately was satisfactory enough to meet course requirements. 
+**Context:** I began this project as an attempt at showing the possibility of deanonymizing Yik Yak users by combining text classification with geospatial information. Work obligations (and the need to keep making minimum payments on a credit card) inhibited me from finishing the project to the level of complexity I originally intended. However, I decided to continue working on it in order to prepare myself for future data science projects/courses, and it ultimately was satisfactory enough to meet course requirements. 
 
 It has served as useful practice for (and demonstration of) data acquisition, pre-processing, and analysis. This repository can be used to learn the basics of all three in the context of how supervised machine learning works, with respect to natural language processing in particular.
 
